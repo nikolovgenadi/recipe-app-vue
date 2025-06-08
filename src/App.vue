@@ -1,30 +1,44 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink> |
+      <RouterLink to="/favourites">Favourites</RouterLink>
+    </nav>
+  </header>
+  <main>
+     <RouterView
+      :favourites="favourites"
+      :addFavourite="addFavourite"
+      :removeFavourite="removeFavourite"
+    />
+  </main>
 </template>
 
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
+
+const favourites = ref<any[]>([])
+
+function addFavourite(recipe: any) {
+  if (!favourites.value.some(r => r.idMeal === recipe.idMeal)) {
+    favourites.value.push(recipe)
+    console.log(`Added ${recipe.strMeal} to favourites.`)
+  }
+}
+
+function removeFavourite(recipe: any) {
+  favourites.value = favourites.value.filter(r => r.idMeal !== recipe.idMeal)
+  console.log(`Removed ${recipe.strMeal} from favourites.`)
+  }
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+nav {
+  padding: 1rem;
+  background-color: #f0f0f0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+nav a {
+  margin-right: 1rem;
 }
 </style>

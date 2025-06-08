@@ -1,5 +1,6 @@
-# Vue 3 + TypeScript + Vite
+Teoretiska resonemang
+Redogör översiktligt hur applikationen fungerar.
+Webbsidan använder gratis API med axios anrop för att hämta recept på massa maträtter. Genom användarinput i sökrutan filtreras vilka recept som ska visas på sidan endast efter tryck på knappen "Search". Man kan lägga till recept till "Favourites" för att den ska visas i /Favourites länken och ta bort de från den länken genom att trycka på knappen igen som ändras antigen på /Home sidan eller /Favourites. På startsidan ser man lite översiktligt information om maträtten och på Favourites sidan ser man mer detaljer i form av instruktioner och ingredienser. 
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Beskriv hur du använt AI utveckling av din applikation. 
+Jag använde ChatGPT för att sammanfatta instruktionerna för uppgiften och att skapa en plan för uppgiften för att inte missa något. Strukturen av projektet är också AI genererad för vilka filer och mappar man ska ha i vue projekt med bästa praxis. När jag inte kunde tänka på lösning av errors frågade jag copilot i vscode och fick information om vad som är fel och hur det kan fixas. AI skapade också favorit knappen med logik och mycket av templates. I slutet använde jag copilot för att kolla igenom projektet och se om den hittar något som behöver fixas och också omformattera koden så att den är mer läsbar och proffesionell. 
